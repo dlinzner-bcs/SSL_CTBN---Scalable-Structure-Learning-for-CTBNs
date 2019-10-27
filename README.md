@@ -31,6 +31,8 @@ ctbn_ssl method expect likelihoods of latent states and measurement times stores
 The format is:
 - time0 : N_TRAJ dimensional cell, where N_TRAJ is number of trajectories. Each cell contains vector of absolute observation time
 - DATAC: N_TRAJ dimensional cell, where N_TRAJ is number of trajectories. Each cell contains again a N dimensional cell, where N is the number of nodes. Thus - likelihoods for latent states are stored node wise. These then contain a D dimensional vector, where D is number of states, per observation time - denoting the likelihood for each latent state
+- L: number of nodes
+- states: vector containing number of states of each node [node1,...,nodeL]
          
 
 
