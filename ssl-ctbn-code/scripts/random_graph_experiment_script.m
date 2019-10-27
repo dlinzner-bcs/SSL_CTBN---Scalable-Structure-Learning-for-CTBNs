@@ -2,7 +2,8 @@
 %Generate synthetic data
 L=5; %number of nodes of random graph
 max_par=2;
-num_graphs=10;
+num_graphs=30;
+N_TRAJ=40; %number of synthetic trajectories
 mworkers=4;
 for graphs=1:num_graphs
     A=zeros(L);
@@ -11,13 +12,12 @@ for graphs=1:num_graphs
         lin(i)=[];
         par=find(mnrnd(1,ones(1,max_par+1).*1/(max_par+1)),1)-1;
         A(i,randsample(lin,par))=1;
-    end
+    end 
     A
     B=ones(L,L);
     for i=1:L
         B(i,i)=0;
     end
-    N_TRAJ=20; %number of synthetic trajectories
     SIGMA=0.2; %noise in synthetic trajectories
     MAX_PAR=2; %maximum number of parents in synthetic experiments
     steps=10; %number of sampled transitions
@@ -38,7 +38,7 @@ for graphs=1:num_graphs
     [DATAC,D] = corrupted_observation_gaussianD(DATA0,SIGMA,node0);
     
     name=sprintf('data.mat');
-    save(name,'DATAC','D','DATA0','D0','time0','SIGMA','node0','b','ta','L','A','B','states');
+    save(name,'DATAC','time0','L','states');
     
     header=sprintf('states_%d_maxpar_%d_ntraj%d_beta%.2g',D0,max_par,N_TRAJ,b);
     hashA=bi2de(reshape(A,[1,L^2]));
@@ -47,5 +47,5 @@ for graphs=1:num_graphs
     %start exhaustive experiment
     ctbn_gradient_structure_learning_dims(name,mworkers)
     %start greedy experiment
-    %ctbn_gradient_structure_learning_dims_greedy(name,mworkers,2)
+    ctbn_gradient_structure_learning_dims_greedy(name,mworkers,2)
 end

@@ -4,9 +4,7 @@
 %        node : final estimated ctbn at different iterations
 %        C    : estimated edge probabilities
 %        F    : value of objective function at different iterations
-
-addpath(genpath('ssl-ctbn-code'))
-
+addpath(genpath('../ssl-ctbn-code'))
 %name of experiment
 name=sprintf('my_test_run_%d_%dparents',1);
 %number of workers running in parallel

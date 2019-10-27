@@ -1,5 +1,5 @@
 # Introduction
-This is the companion code to the paper 'Scalable Structure Learning for Continuous-time Bayesian Networks from Incomplete Data' [D.Linzner, M.Schmidt and H Koeppl].
+This is the companion code to the paper 'Scalable Structure Learning of Continuous-time Bayesian Networks from Incomplete Data' [D.Linzner, M.Schmidt and H Koeppl].
 
 Simulations similar to the ones used in the paper can be run with this Matlab code.
 
