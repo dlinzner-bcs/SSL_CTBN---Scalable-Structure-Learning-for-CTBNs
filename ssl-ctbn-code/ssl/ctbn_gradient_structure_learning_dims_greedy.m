@@ -21,12 +21,11 @@ for m=1:MAX_SWEEPS
         f(k)=marg_llh_sparse_reg_DIMS_greedy(node,dt,MU,RHO,DATAC,time0)
     end
     F(m) = marg_llh_sparse_reg_DIMS_greedy(node,dt,MU,RHO,DATAC,time0)
-    [node,rep] = estimate_pi_sparse_reg_par_DIMS_grad(node,lam,MAX_RESTARTS);
+    [node,~] = estimate_pi_sparse_reg_par_DIMS_grad(node,lam,MAX_RESTARTS);
     
     C=extract_net_prob(node)
-    Repm{m}=rep;
     Nodem{m}=node;
-    save(name,'node','F','Nodem','Repm')
+    save(name,'node','Nodem','C','F')
 end
 
 

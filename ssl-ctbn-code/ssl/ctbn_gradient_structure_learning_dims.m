@@ -27,17 +27,15 @@ parpool(mworkers);
 for m=1:MAX_SWEEPS
     %expectation
     for k=1:MAX_ITER
-        [MU,RHO,node] = ctbn_expectation_sparse_reg_par_DIMS(node,dt,M,t0,DATAC,time0,thresh);
-        
+        [MU,RHO,node] = ctbn_expectation_sparse_reg_par_DIMS(node,dt,M,t0,DATAC,time0,thresh);        
         f(k)=marg_llh_sparse_reg_DIMS_greedy(node,dt,MU,RHO,DATAC,time0)
     end
     F(m) = marg_llh_sparse_reg_DIMS_greedy(node,dt,MU,RHO,DATAC,time0);
     %maximization
-    [node,rep] = estimate_pi_sparse_reg_par_DIMS_grad(node,lam,MAX_RESTARTS);
+    [node,~] = estimate_pi_sparse_reg_par_DIMS_grad(node,lam,MAX_RESTARTS);
     C=extract_net_prob(node)
-    Repm{m}=rep;
     Nodem{m}=node;
-    save(name,'node','F','A','C','Nodem','Repm','pi0','DATA0','time0')
+    save(name,'node','Nodem','C','F')
 end
 
 

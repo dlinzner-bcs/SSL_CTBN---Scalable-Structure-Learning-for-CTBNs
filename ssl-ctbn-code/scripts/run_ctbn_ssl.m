@@ -8,8 +8,8 @@
 addpath(genpath('ssl-ctbn-code'))
 
 %name of experiment
-name=sprintf('my_test_run_%d_%dparents',1,K)
+name=sprintf('my_test_run_%d_%dparents',1);
 %number of workers running in parallel
-mworkers=2;
+mworkers=4;
 
 ctbn_gradient_structure_learning_dims(name,mworkers)
