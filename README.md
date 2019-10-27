@@ -19,7 +19,7 @@ Hyper-parameters are to be stored in "params.mat" and are loaded automatically d
 - M :max number of iterations in Algorithm 1 in inner loop (default 20)
 - MAX_ITER: number of iterations in Algorithm 1 in outer loop (default 5)
 - MAX_SWEEPS: number of EM iterations (default 3)
-- alphabet : shape and rate Gamma params of rate prior
+- alph,bet : shape and rate Gamma params of rate prior (CAUTION: bet/alph needs to roughly match the time-scale on which observations are provided or errors may occur)
 - dt       : time-grid for storing ODE solutions (default dt=0.005)
 - lam      : Dirichlet concentration via lam=-(c-1) (default 0.1)
 - prior_graph: adjacency matrix of some overcomplete graph (default full graph)
