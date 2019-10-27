@@ -56,10 +56,10 @@ for d=1:D
                             for um=1:length(states)
                                 ki=1;
                                 pam=ones(tau,1);
-                                for h=sub     
+                                for h=sub
                                     mu_p=MU{m}{h};
                                     pam=pam.*mu_p(:,states(um,ki));
-                                    ki=ki+1;                                  
+                                    ki=ki+1;
                                     %  pam=pam.*mu(:,h,states(um,ki));
                                 end
                                 alpha_bar=squeeze(node(j).pi(k)*node(j).trans_k{k}(um,d_,d__)+node(j).alpha_k{k}(um,d_,d__));
@@ -82,9 +82,9 @@ for d=1:D
         for d_=1:D_
             for d__=1:D_
                 if (d_~=d__)
-                    if prod(rho_p(:,d_)>0)
-                        C=C+mu_p(:,d_).*(Q_gm(:,d_,d__).*rho_p(:,d__)./rho_p(:,d_)-Q_am(:,d_,d__));
-                    end
+                    a=rho_p(:,d_);
+                    a(a==0)=10^(-12);
+                    C=C+mu_p(:,d_).*(Q_gm(:,d_,d__).*rho_p(:,d__)./a-Q_am(:,d_,d__));                 
                 end
             end
         end

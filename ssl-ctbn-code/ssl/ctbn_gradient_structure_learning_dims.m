@@ -9,6 +9,7 @@ prior.pi=1;
 prior.alpha=alph;
 prior.beta=bet;
 node=createMotherCTBN_DIMS(L,prior,states);
+[node]=genGammaPriorRatesD_single(node);
 for i=1:length(node)
     pi0=ones(length(node(i).pi ),1)*10^(-3);
     pi0(end)=1;

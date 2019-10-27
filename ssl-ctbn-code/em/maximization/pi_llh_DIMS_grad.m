@@ -41,9 +41,5 @@ if nargout > 1 % gradient required
     end
 end
 
-%grad[i] -= alpha_bar dwell / beta_bar
-%grad[i] -= log(  beta_bar)  M_Sum
-%grad[i] += SpecialFunctions.digamma(alpha_bar)  M_Sum
-
 end
 

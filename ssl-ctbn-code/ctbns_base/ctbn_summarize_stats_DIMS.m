@@ -25,7 +25,6 @@ for i=1:length(node)
                 for l=node(i).subsets{k}
                     ind=[ind,find(node(i).parents==l)];
                 end
-                %states=de2bi(0:(2^length(ind))-1)+1;
                 states=node_states(node,node(i).subsets{k});
                 ss=size(states);
                 M_k=zeros(ss(1),D,D);

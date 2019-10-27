@@ -60,9 +60,9 @@ for d=1:D
         for d_=1:D_
             for d__=1:D_
                 if (d_~=d__)
-                    if prod(rho_p(:,d_)>0)
-                        C=C+mu_p(:,d_).*(Q_am(:,d_,d__).*rho_p(:,d__)./rho_p(:,d_)-Q_am(:,d_,d__));
-                    end
+                    a=rho_p(:,d_);
+                    a(a==0)=10^(-12);
+                    C=C+mu_p(:,d_).*(Q_am(:,d_,d__).*rho_p(:,d__)./a-Q_am(:,d_,d__));                    
                 end
             end
         end

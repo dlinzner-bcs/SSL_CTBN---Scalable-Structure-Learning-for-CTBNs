@@ -16,6 +16,7 @@ for k=1:length(TZ)
 end
 parfor k=1:length(TZ)
     try
+      
         [mu,rho,~] = P_CVMCTBN_STAR_POST_REG_DIMS(node,dt,Mmax,t0,Z{k},TZ{k},thresh);
         MU{k}=mu{Mmax};
         RHO{k}=rho{Mmax-1};

@@ -4,7 +4,7 @@ function [] = ctbn_gradient_structure_learning_dims_greedy(name,mworkers,K)
 load('params.mat');
 load('data.mat');
 
-prior.graph=B;
+prior.graph=prior_graph;
 prior.pi=1;
 prior.alpha=alph;
 prior.beta=bet;
