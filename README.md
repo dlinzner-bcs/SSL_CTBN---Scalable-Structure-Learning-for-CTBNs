@@ -10,7 +10,7 @@ This code has been tested with Matlab 2018b
 
 
 # Running code
-Pre-made scripts for running code can be found in folder "scripts". We provide the files "run_ctbn_ssl.mat" and "run_greedy_ctbn_ssl.mat" for exhaustive and greedy version of our method. Please note that only the greedy version can scale to large number of nodes. Both function expect hyper-parameters and data in a specific format with names "params.mat" and "data.mat". We provide a dummy "params.mat" and "data.mat" for illustration
+Pre-made scripts for running code can be found in folder "scripts". We provide the files "run_ctbn_ssl.mat" and "run_greedy_ctbn_ssl.mat" for exhaustive and greedy version of our method. Please note that only the greedy version can scale to large number of nodes. **Both function expect hyper-parameters and data in a specific format with names "params.mat" and "data.mat"**. We provide a dummy "params.mat" and "data.mat" for illustration
 
 Further, we provide the "random_graph_experiment_script.m" that can reconstruct data from Figure 3, but this takes some time.
 
@@ -20,7 +20,7 @@ Hyper-parameters are to be stored in "params.mat" and are loaded automatically d
 - MAX_ITER: number of iterations in Algorithm 1 in outer loop (default 5)
 - MAX_RESTARTS: maximum number of restarts of Matlab gradient descend
 - MAX_SWEEPS: number of EM iterations, see Algorithm 2 (default 3)
-- alph,bet : shape and rate Gamma params of rate prior (CAUTION: bet/alph needs to roughly match the time-scale on which observations are provided or errors may occur)
+- alph,bet : shape and rate Gamma params of rate prior (**CAUTION: bet/alph needs to roughly match the time-scale on which observations are provided or errors may occur**)
 - dt       : time-grid for storing ODE solutions (default dt=0.005)
 - lam      : Dirichlet concentration via lam=-(c-1) (default 0.1)
 - prior_graph: adjacency matrix of some overcomplete graph (default full graph)
