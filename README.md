@@ -29,8 +29,8 @@ Hyper-parameters are to be stored in "params.mat" and are loaded automatically d
 # Data format
 ctbn_ssl method expect likelihoods of latent states and measurement times stores in "data.mat". Data is then loaded automatically during run-time.
 The format is:
--time0 : N_TRAJ dimensional cell, where N_TRAJ is number of trajectories. Each cell contains vector of absolute observation time
--DATAC: N_TRAJ dimensional cell, where N_TRAJ is number of trajectories. Each cell contains again a N dimensional cell, where N is the number of nodes. Thus - likelihoods for latent states are stored node wise. These then contain a D dimensional vector, where D is number of states, per observation time - denoting the likelihood for each latent state
+- time0 : N_TRAJ dimensional cell, where N_TRAJ is number of trajectories. Each cell contains vector of absolute observation time
+- DATAC: N_TRAJ dimensional cell, where N_TRAJ is number of trajectories. Each cell contains again a N dimensional cell, where N is the number of nodes. Thus - likelihoods for latent states are stored node wise. These then contain a D dimensional vector, where D is number of states, per observation time - denoting the likelihood for each latent state
          
 
 
