@@ -51,14 +51,18 @@ for i=1:L
         sp=size(node_states(node,subsets{k}));
         if sp(1)>0
             for u=1:sp(1)
-                node(i).alpha_k{k}=ones(u,D,D).*alpha_0/sp(1);
-                node(i).beta_k{k}=ones(u,D).*beta_0/sp(1);
+                node(i).alpha_k{k}=ones(u,D,D).*alpha_0*D^(L-1)/sp(1);
+                node(i).beta_k{k}=ones(u,D).*beta_0*D^(L-1)/sp(1);
+             %   node(i).alpha_k{k}=ones(u,D,D).*alpha_0;
+             %   node(i).beta_k{k}=ones(u,D).*beta_0;
                 node(i).trans_k{k}=ones(u,D,D).*0;
                 node(i).dwell_k{k}=ones(u,D).*0;
             end
         else
-            node(i).alpha_k{k}=ones(1,D,D).*alpha_0;
-            node(i).beta_k{k}=ones(1,D).*beta_0;
+            %node(i).alpha_k{k}=ones(1,D,D).*alpha_0;
+            %node(i).beta_k{k}=ones(1,D).*beta_0;
+            node(i).alpha_k{k}=ones(1,D,D).*alpha_0*D^(L-1);
+            node(i).beta_k{k}=ones(1,D).*beta_0*D^(L-1);
             node(i).trans_k{k}=ones(1,D,D).*0;
             node(i).dwell_k{k}=ones(1,D).*0;
         end
