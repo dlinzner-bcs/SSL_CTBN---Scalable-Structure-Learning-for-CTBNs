@@ -4,7 +4,7 @@
 %        node : final estimated ctbn at different iterations
 %        C    : estimated edge probabilities
 %        F    : value of objective function at different iterations
-addpath(genpath('../ssl-ctbn-code'))
+addpath(genpath('./ssl-ctbn-code'))
 %maximal number of parents in greedy search
 K=2;
 %name of experiment

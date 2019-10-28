@@ -1,4 +1,4 @@
-%addpath(genpath('ssl-ctbn-code'))
+addpath(genpath('./ssl-ctbn-code'))
 %Generate synthetic data
 L=5; %number of nodes of random graph
 max_par=2;
