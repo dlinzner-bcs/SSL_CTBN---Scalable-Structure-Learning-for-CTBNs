@@ -3,7 +3,7 @@ addpath(genpath('./ssl-ctbn-code'))
 L=5; %number of nodes of random graph
 max_par=2;
 num_graphs=30;
-N_TRAJ=40; %number of synthetic trajectories
+N_TRAJ=10; %number of synthetic trajectories
 mworkers=4;
 for graphs=1:num_graphs
     A=zeros(L);
@@ -24,7 +24,7 @@ for graphs=1:num_graphs
     dt=0.005; %simulation time step
     %parameters of ground-truth (kinetic ising-model)
     ta=1; %rate scale
-    b=-1.4; % inverse temperature
+    b=-0.7; % inverse temperature
     D0=2;
     
     states=ones(1,L)*D0;
