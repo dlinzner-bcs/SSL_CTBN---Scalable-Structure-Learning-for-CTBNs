@@ -63,7 +63,7 @@ for w=1:numbOfV
             for d_=1:D
                 if d_~=d
                     x=(d_-mean(node(w).Omega));
-                    r=(1/2)*(1+tanh(x*temp*sumOfParSt));
+                    r=(1/2)*(1+tanh(4*x*temp*sumOfParSt));
                     CIM(d,d_)=tau*r;
                 end
             end
