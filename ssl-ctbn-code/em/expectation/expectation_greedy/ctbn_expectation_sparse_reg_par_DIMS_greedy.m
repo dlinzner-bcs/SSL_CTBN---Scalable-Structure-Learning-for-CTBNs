@@ -48,8 +48,8 @@ for i=1:length(node)
         T0=zeros(st(1),st(2));
         M0=zeros(sm(1),sm(2),sm(3));
         for k_=1:length(TZ)
-            T0=T0+T{k}{i}{l0};
-            M0=M0+M{k}{i}{l0};
+            T0=T0+T{k_}{i}{l0};
+            M0=M0+M{k_}{i}{l0};
         end
         node(i).trans_k{l0}=M0;
         node(i).dwell_k{l0}=T0;
