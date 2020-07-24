@@ -1,9 +1,3 @@
-% By Paulo Abelha
-%
-% Returns the powerset of set S
-%
-% S is a cell array
-% P is a cell array of cell arrays
 function [ P ] = PowerSet_r( S ,N)
     N
     x = 1:N;

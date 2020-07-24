@@ -17,7 +17,7 @@ if (isempty(node(i).parents)==0)
         M_i=0;       
         pa=ones(t,1);
         ki=1;       
-        for k=node(i).parents           
+        for k = node(i).parents           
               mu_p=MU{k};
               pa=pa.*mu_p(1:t,ps(mn,ki));  
               ki=ki+1;           

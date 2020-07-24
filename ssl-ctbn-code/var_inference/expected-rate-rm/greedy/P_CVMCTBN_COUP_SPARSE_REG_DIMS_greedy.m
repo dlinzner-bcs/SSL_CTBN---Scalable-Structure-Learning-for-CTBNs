@@ -6,7 +6,6 @@ sm=size(mu);
 tau=sm(1);
 D=node(i).D;
 psi0=zeros(tau,D); % time dimension
-p=node(i).child_prob;
 %%%%% diamond term
 for d=1:D
     %%%%AVERAGING RATES OF CHILDREN%%%%%
@@ -31,7 +30,8 @@ for d=1:D
                             states(states(:,ind)~=d,:)=[];
                             sub(sub==i)=[];
                             states(:,ind)=[];
-                            for um=1:length(states)
+                            ss=size(states);
+                            for um=1:ss(1)
                                 ki=1;
                                 pam=ones(tau,1);
                                 for h=sub

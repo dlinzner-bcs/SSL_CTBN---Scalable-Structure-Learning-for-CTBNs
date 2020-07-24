@@ -1,4 +1,4 @@
-function [T_k,M_k] = CTBN_cond_stat_star_sparse_reg_DIMS_greedy(node,i,t,dt,MU,RHO)
+function [T_k,M_k] = CTBN_cond_stat_star_sparse_reg_DIMS_greedy_approx(node,i,t,dt,MU,RHO)
 %CALCULATE COND STATISTICS OF CTBN
 mu=MU{i};
 rho=RHO{i};
@@ -26,8 +26,8 @@ for k=1:length(node(i).pi)
                 T_i(d)=trapz(linspace(0,dt*t,t),mu(1:t,d).*pa);
                 for d_=1:D
                     if (d~=d_)
-                        q_am=ctbn_gen_am_rate_sparse_reg_DIMS_partial(node,MU,i,ps(mn,:),node(i).subsets{k},d,d_);
-                        M_i(d,d_)=trapz(linspace(0,dt*t,t),q_am(1:t).*pa(1:t).*mu(1:t,d).*(rho(1:t,d_))./(rho(1:t,d)));
+                        q_gm=ctbn_gen_gm_rate_sparse_reg_DIMS_partial(node,MU,i,ps(mn,:),node(i).subsets{k},d,d_);
+                        M_i(d,d_)=trapz(linspace(0,dt*t,t),q_gm(1:t).*pa(1:t).*mu(1:t,d).*(rho(1:t,d_))./(rho(1:t,d)));
                     end
                 end
             end
@@ -39,8 +39,8 @@ for k=1:length(node(i).pi)
             T_i(d)=trapz(linspace(0,dt*t,t),mu(1:t,d));
             for d_=1:D
                 if (d~=d_)
-                    q_am=ctbn_gen_am_rate_sparse_reg_DIMS_partial(node,MU,i,[],[],d,d_);
-                    M_i(d,d_)=trapz(linspace(0,dt*t,t),mu(1:t,d).*q_am(1:t).*(rho(1:t,d_)./rho(1:t,d)));
+                    q_gm=ctbn_gen_gm_rate_sparse_reg_DIMS_partial(node,MU,i,[],[],d,d_);
+                    M_i(d,d_)=trapz(linspace(0,dt*t,t),mu(1:t,d).*q_gm(1:t).*(rho(1:t,d_)./rho(1:t,d)));
                 end
             end
         end

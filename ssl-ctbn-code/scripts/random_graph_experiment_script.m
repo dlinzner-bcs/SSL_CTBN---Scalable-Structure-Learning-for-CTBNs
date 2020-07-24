@@ -3,7 +3,7 @@ addpath(genpath('./ssl-ctbn-code'))
 L=5; %number of nodes of random graph
 max_par=2;
 num_graphs=30;
-N_TRAJ=10; %number of synthetic trajectories
+N_TRAJ=40; %number of synthetic trajectories
 mworkers=4;
 for graphs=1:num_graphs
     A=zeros(L);

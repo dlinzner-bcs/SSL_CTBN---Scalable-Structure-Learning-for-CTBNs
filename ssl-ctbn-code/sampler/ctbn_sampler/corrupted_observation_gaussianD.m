@@ -18,7 +18,7 @@ for j=1:N_TRAJ
             Y(d_,:)=normpdf(D_h,d_,SIGMA);
         end
         Z=round(Y,5);
-        Y(Z==0)=10^(-4);
+        Y(Z==0)=10^(-2);
         Y=Y./sum(Y,1);
         D{j}{i}=D_h;
         DATAC{j}{i}=Y;

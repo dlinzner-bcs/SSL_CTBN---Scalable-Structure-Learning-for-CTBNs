@@ -71,6 +71,7 @@ for i=1:L
     
     sps=size(P);
     node(i).pi=pi_0.*ones(1,sps(2));
+    node(i).pi(end)=1;
     node(i).pi=node(i).pi/sum(node(i).pi);
 end
 
